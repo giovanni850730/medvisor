@@ -1,0 +1,52 @@
+[
+  {
+    "topic": "Ischemic Stroke",
+    "category": "Neurology",
+    "content": "An ischemic stroke occurs when a blood vessel supplying the brain becomes blocked, usually by a blood clot. This blockage cuts off oxygen and nutrients to brain tissue, causing brain cells to die within minutes. Ischemic strokes account for about 87% of all strokes. Common causes include atherosclerosis (buildup of fatty deposits in arteries), atrial fibrillation (irregular heartbeat that can form clots), and small vessel disease. Symptoms include sudden weakness or numbness on one side of the body, difficulty speaking, vision problems, and loss of balance. Treatment within the first few hours is critical and may include clot-dissolving medication (tPA) or mechanical thrombectomy to physically remove the clot."
+  },
+  {
+    "topic": "Hemorrhagic Stroke",
+    "category": "Neurology",
+    "content": "A hemorrhagic stroke happens when a weakened blood vessel in the brain ruptures and bleeds into or around the brain tissue. This accounts for about 13% of strokes but causes a higher proportion of stroke deaths. The two main types are intracerebral hemorrhage (bleeding within the brain) and subarachnoid hemorrhage (bleeding in the space surrounding the brain). The most common cause is chronic high blood pressure, which weakens artery walls over time. Other causes include aneurysms, arteriovenous malformations, and blood-thinning medications. Symptoms can include sudden severe headache, nausea, vomiting, and decreased consciousness, in addition to the focal neurological deficits seen in ischemic stroke."
+  },
+  {
+    "topic": "Transient Ischemic Attack",
+    "category": "Neurology",
+    "content": "A transient ischemic attack (TIA), often called a mini-stroke, is a temporary blockage of blood flow to the brain. Unlike a full stroke, a TIA does not cause permanent damage because the blockage clears on its own, usually within minutes to hours. However, a TIA is a serious warning sign that a major stroke may follow, with the highest risk in the days immediately after. About one in three people who experience a TIA will eventually have a stroke. Symptoms are identical to stroke symptoms but resolve completely. Anyone experiencing TIA symptoms should seek emergency care immediately, as urgent evaluation and preventive treatment can substantially reduce the risk of a subsequent stroke."
+  },
+  {
+    "topic": "Myocardial Infarction",
+    "category": "Cardiology",
+    "content": "A myocardial infarction, commonly known as a heart attack, occurs when blood flow to part of the heart muscle is blocked, usually by a clot forming on a ruptured cholesterol plaque in a coronary artery. Without oxygen-rich blood, the affected heart muscle begins to die. Classic symptoms include chest pain or pressure that may radiate to the arm, jaw, or back, shortness of breath, sweating, and nausea. Some people, particularly women and people with diabetes, may have atypical or subtle symptoms. Immediate treatment aims to restore blood flow through medications or procedures such as angioplasty with stent placement. Rapid treatment minimizes permanent heart damage."
+  },
+  {
+    "topic": "Type 2 Diabetes",
+    "category": "Endocrinology",
+    "content": "Type 2 diabetes is a chronic condition in which the body becomes resistant to insulin or does not produce enough insulin, leading to elevated blood sugar levels. Over time, high blood sugar can damage blood vessels and nerves, increasing the risk of heart disease, stroke, kidney disease, vision loss, and nerve damage. Risk factors include obesity, physical inactivity, family history, and age. Many people have no symptoms early on, while others experience increased thirst, frequent urination, fatigue, and slow-healing wounds. Management focuses on lifestyle changes such as a balanced diet and regular exercise, along with medications like metformin and, when needed, insulin therapy."
+  },
+  {
+    "topic": "Hypertension",
+    "category": "Cardiology",
+    "content": "Hypertension, or high blood pressure, is a condition in which the force of blood against artery walls is consistently too high. It is often called a silent killer because it usually has no symptoms but significantly raises the risk of heart attack, stroke, heart failure, and kidney disease. Blood pressure is measured as systolic over diastolic pressure, and readings consistently at or above 130/80 mmHg are generally considered elevated. Contributing factors include high salt intake, obesity, lack of exercise, excessive alcohol, stress, and genetics. Treatment includes lifestyle modifications and medications such as ACE inhibitors, calcium channel blockers, and diuretics."
+  },
+  {
+    "topic": "Alzheimer Disease",
+    "category": "Neurology",
+    "content": "Alzheimer disease is a progressive neurodegenerative disorder and the most common cause of dementia. It is characterized by the accumulation of amyloid-beta plaques and tau protein tangles in the brain, leading to the death of neurons and shrinkage of brain tissue. Early symptoms include difficulty remembering recent events, while later stages involve confusion, mood changes, difficulty with language, and eventually loss of the ability to carry out daily activities. Age is the greatest risk factor, along with genetics and cardiovascular risk factors. While there is no cure, some medications can temporarily improve symptoms, and research into disease-modifying therapies targeting amyloid is ongoing."
+  },
+  {
+    "topic": "Pneumonia",
+    "category": "Pulmonology",
+    "content": "Pneumonia is an infection that inflames the air sacs in one or both lungs, which may fill with fluid or pus. It can be caused by bacteria, viruses, or fungi. Symptoms include cough with phlegm, fever, chills, and difficulty breathing. The severity ranges from mild to life-threatening, and it is most dangerous for infants, older adults, and people with weakened immune systems or chronic diseases. Bacterial pneumonia is commonly treated with antibiotics, while viral pneumonia is managed supportively. Vaccines against common causes such as pneumococcus and influenza can help prevent some types of pneumonia."
+  },
+  {
+    "topic": "Asthma",
+    "category": "Pulmonology",
+    "content": "Asthma is a chronic respiratory condition in which the airways become inflamed and narrowed, making breathing difficult. During an asthma attack, the muscles around the airways tighten, the lining swells, and excess mucus is produced. Common triggers include allergens, exercise, cold air, respiratory infections, and air pollution. Symptoms include wheezing, shortness of breath, chest tightness, and coughing, often worse at night or early morning. Asthma is managed with two types of medication: long-term control medications such as inhaled corticosteroids that reduce inflammation, and quick-relief inhalers such as bronchodilators that open the airways during an attack."
+  },
+  {
+    "topic": "Chronic Kidney Disease",
+    "category": "Nephrology",
+    "content": "Chronic kidney disease is the gradual loss of kidney function over time. The kidneys filter waste and excess fluid from the blood, and when they are damaged, harmful levels of waste can build up in the body. The most common causes are diabetes and high blood pressure. Early stages often have no symptoms, but as the disease progresses, people may experience fatigue, swelling in the legs, changes in urination, and difficulty concentrating. The disease is staged based on the glomerular filtration rate (GFR). Management focuses on treating the underlying cause, controlling blood pressure and blood sugar, and in advanced stages may require dialysis or kidney transplant."
+  }
+]
