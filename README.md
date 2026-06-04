@@ -58,7 +58,7 @@ All wrapped in an interactive **Gradio** web UI.
 
 ### 1. Clone & install
 ```bash
-git clone https://github.com/<your-username>/medvisor.git
+git clone https://github.com/giovanni850730/medvisor.git
 cd medvisor
 pip install -r requirements.txt
 ```
