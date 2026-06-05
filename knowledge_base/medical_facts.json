@@ -1,52 +1,77 @@
 [
   {
     "topic": "Ischemic Stroke",
-    "category": "Neurology",
-    "content": "An ischemic stroke occurs when a blood vessel supplying the brain becomes blocked, usually by a blood clot. This blockage cuts off oxygen and nutrients to brain tissue, causing brain cells to die within minutes. Ischemic strokes account for about 87% of all strokes. Common causes include atherosclerosis (buildup of fatty deposits in arteries), atrial fibrillation (irregular heartbeat that can form clots), and small vessel disease. Symptoms include sudden weakness or numbness on one side of the body, difficulty speaking, vision problems, and loss of balance. Treatment within the first few hours is critical and may include clot-dissolving medication (tPA) or mechanical thrombectomy to physically remove the clot."
+    "category": "Stroke Neurology",
+    "content": "An ischemic stroke occurs when a blood vessel supplying the brain becomes blocked, usually by a blood clot. This blockage cuts off oxygen and nutrients to brain tissue, causing brain cells to die within minutes. Ischemic strokes account for about 87% of all strokes. Common causes include atherosclerosis, atrial fibrillation, and small vessel disease. Symptoms include sudden weakness or numbness on one side of the body, difficulty speaking, vision problems, and loss of balance. Treatment within the first few hours is critical and may include clot-dissolving medication (tPA) or mechanical thrombectomy to physically remove the clot. The phrase 'time is brain' reflects how rapidly neurons are lost during an untreated stroke."
   },
   {
     "topic": "Hemorrhagic Stroke",
-    "category": "Neurology",
-    "content": "A hemorrhagic stroke happens when a weakened blood vessel in the brain ruptures and bleeds into or around the brain tissue. This accounts for about 13% of strokes but causes a higher proportion of stroke deaths. The two main types are intracerebral hemorrhage (bleeding within the brain) and subarachnoid hemorrhage (bleeding in the space surrounding the brain). The most common cause is chronic high blood pressure, which weakens artery walls over time. Other causes include aneurysms, arteriovenous malformations, and blood-thinning medications. Symptoms can include sudden severe headache, nausea, vomiting, and decreased consciousness, in addition to the focal neurological deficits seen in ischemic stroke."
+    "category": "Stroke Neurology",
+    "content": "A hemorrhagic stroke happens when a weakened blood vessel in the brain ruptures and bleeds into or around the brain tissue. This accounts for about 13% of strokes but causes a higher proportion of stroke deaths. The two main types are intracerebral hemorrhage and subarachnoid hemorrhage. The most common cause is chronic high blood pressure, which weakens artery walls over time. Other causes include aneurysms, arteriovenous malformations, and blood-thinning medications. Symptoms can include sudden severe headache, nausea, vomiting, and decreased consciousness, in addition to focal neurological deficits. Management focuses on controlling blood pressure, reversing anticoagulation, and sometimes surgery to relieve pressure on the brain."
   },
   {
     "topic": "Transient Ischemic Attack",
-    "category": "Neurology",
+    "category": "Stroke Neurology",
     "content": "A transient ischemic attack (TIA), often called a mini-stroke, is a temporary blockage of blood flow to the brain. Unlike a full stroke, a TIA does not cause permanent damage because the blockage clears on its own, usually within minutes to hours. However, a TIA is a serious warning sign that a major stroke may follow, with the highest risk in the days immediately after. About one in three people who experience a TIA will eventually have a stroke. Symptoms are identical to stroke symptoms but resolve completely. Anyone experiencing TIA symptoms should seek emergency care immediately, as urgent evaluation and preventive treatment can substantially reduce the risk of a subsequent stroke."
   },
   {
-    "topic": "Myocardial Infarction",
-    "category": "Cardiology",
-    "content": "A myocardial infarction, commonly known as a heart attack, occurs when blood flow to part of the heart muscle is blocked, usually by a clot forming on a ruptured cholesterol plaque in a coronary artery. Without oxygen-rich blood, the affected heart muscle begins to die. Classic symptoms include chest pain or pressure that may radiate to the arm, jaw, or back, shortness of breath, sweating, and nausea. Some people, particularly women and people with diabetes, may have atypical or subtle symptoms. Immediate treatment aims to restore blood flow through medications or procedures such as angioplasty with stent placement. Rapid treatment minimizes permanent heart damage."
+    "topic": "Lacunar Stroke",
+    "category": "Stroke Neurology",
+    "content": "A lacunar stroke is a type of ischemic stroke caused by the blockage of one of the small, deep penetrating arteries of the brain. These small infarcts, typically less than 15 millimeters in diameter, occur in regions such as the basal ganglia, internal capsule, thalamus, and pons. The main underlying cause is small vessel disease driven by chronic high blood pressure and diabetes, which thickens and damages the tiny artery walls. Lacunar strokes produce characteristic clinical syndromes, such as pure motor weakness or pure sensory loss, depending on the location. Although individual lacunar strokes are small, their accumulation contributes to vascular cognitive impairment. Some patients experience early neurological deterioration in the days after onset, which is an active area of prediction research."
   },
   {
-    "topic": "Type 2 Diabetes",
-    "category": "Endocrinology",
-    "content": "Type 2 diabetes is a chronic condition in which the body becomes resistant to insulin or does not produce enough insulin, leading to elevated blood sugar levels. Over time, high blood sugar can damage blood vessels and nerves, increasing the risk of heart disease, stroke, kidney disease, vision loss, and nerve damage. Risk factors include obesity, physical inactivity, family history, and age. Many people have no symptoms early on, while others experience increased thirst, frequent urination, fatigue, and slow-healing wounds. Management focuses on lifestyle changes such as a balanced diet and regular exercise, along with medications like metformin and, when needed, insulin therapy."
+    "topic": "Large Hemispheric Infarction",
+    "category": "Stroke Neurology",
+    "content": "A large hemispheric infarction is a severe form of ischemic stroke involving a major portion of one cerebral hemisphere, usually from blockage of the middle cerebral artery or internal carotid artery. Because so much brain tissue is affected, these strokes carry a high risk of life-threatening brain swelling. When swelling becomes severe, it is called malignant cerebral edema, which can raise pressure inside the skull and compress vital structures. This typically develops within the first two to five days after the stroke. Warning signs include worsening alertness and new pupil changes. Treatment may include medications to reduce swelling and, in selected younger patients, a surgery called decompressive hemicraniectomy that removes part of the skull to give the swollen brain room to expand, which can be life-saving."
+  },
+  {
+    "topic": "Malignant Cerebral Edema",
+    "category": "Stroke Neurology",
+    "content": "Malignant cerebral edema is dangerous brain swelling that develops after a large ischemic stroke. As injured brain cells take on water, the affected hemisphere swells and pressure builds inside the rigid skull. This rising intracranial pressure can shift brain tissue across midline structures, a process called herniation, which threatens the brainstem centers that control breathing and consciousness. It most often appears between the second and fifth day after a large stroke. Early identification is critical, and clinicians watch for declining consciousness, new weakness, and pupil asymmetry, supported by repeat brain imaging. Because outcomes depend heavily on timing, predicting which patients will progress to malignant edema is an important goal, and decompressive surgery within the right time window can reduce mortality substantially."
+  },
+  {
+    "topic": "Thrombolysis with tPA",
+    "category": "Stroke Treatment",
+    "content": "Thrombolysis is a treatment for acute ischemic stroke that uses a clot-dissolving drug called tissue plasminogen activator (tPA), or its variant tenecteplase. The medication works by activating the body's natural system for breaking down blood clots, restoring blood flow to the threatened brain tissue. To be effective and safe, it must be given within a limited time window, generally up to 4.5 hours after symptom onset, because the risk of bleeding complications rises over time. Before treatment, a brain scan is required to rule out hemorrhage, since giving a clot-dissolving drug during a bleed would be dangerous. tPA can dramatically improve recovery when given early, embodying the principle that faster treatment saves brain tissue."
+  },
+  {
+    "topic": "Mechanical Thrombectomy",
+    "category": "Stroke Treatment",
+    "content": "Mechanical thrombectomy is a minimally invasive procedure that physically removes a large blood clot from a brain artery in patients with acute ischemic stroke. A thin catheter is threaded from an artery, usually in the groin or wrist, up into the blocked brain vessel, where a stent retriever or suction device captures and removes the clot. It is most beneficial for strokes caused by large vessel occlusions and can be performed up to 24 hours after onset in carefully selected patients identified by advanced imaging. Thrombectomy has transformed stroke care, producing substantial improvements in functional recovery for patients who would otherwise face severe disability. It is often combined with thrombolysis when both are appropriate."
+  },
+  {
+    "topic": "NIHSS Stroke Scale",
+    "category": "Stroke Neurology",
+    "content": "The National Institutes of Health Stroke Scale (NIHSS) is a standardized tool used to measure the severity of a stroke. It assesses several neurological functions, including level of consciousness, eye movements, visual fields, facial movement, arm and leg strength, coordination, sensation, language, speech clarity, and attention. Each item is scored, and the points are summed to give a total ranging from 0 to 42, where higher scores indicate more severe deficits. The NIHSS helps clinicians communicate stroke severity consistently, guide treatment decisions such as eligibility for thrombectomy, and track changes over time. A rising score after admission can signal complications such as worsening swelling or extension of the stroke."
+  },
+  {
+    "topic": "Stroke Brain Imaging",
+    "category": "Stroke Neurology",
+    "content": "Brain imaging is essential in stroke care for confirming the diagnosis, distinguishing ischemic from hemorrhagic stroke, and guiding treatment. A non-contrast CT scan is usually performed first because it is fast and reliably detects bleeding. MRI, particularly diffusion-weighted imaging (DWI), is highly sensitive for detecting early ischemic injury, which appears as a bright signal where brain tissue has lost its ability to regulate water movement. The apparent diffusion coefficient (ADC) map and FLAIR sequences provide additional information about the age and extent of the injury. Advanced techniques such as CT perfusion help identify salvageable tissue, the so-called penumbra, which informs decisions about thrombolysis and thrombectomy in extended time windows."
+  },
+  {
+    "topic": "Atrial Fibrillation and Stroke",
+    "category": "Cardiology",
+    "content": "Atrial fibrillation is an irregular and often rapid heart rhythm that significantly increases the risk of stroke. When the upper chambers of the heart quiver instead of contracting effectively, blood can pool and form clots, particularly in a small pouch called the left atrial appendage. If a clot breaks free, it can travel to the brain and block an artery, causing a cardioembolic stroke that is often large and severe. Because of this risk, many people with atrial fibrillation are treated with anticoagulant medications that reduce clot formation. Risk assessment tools help clinicians weigh the benefit of stroke prevention against the bleeding risk of these medications. Detecting silent atrial fibrillation is an important part of preventing recurrent strokes."
   },
   {
     "topic": "Hypertension",
     "category": "Cardiology",
-    "content": "Hypertension, or high blood pressure, is a condition in which the force of blood against artery walls is consistently too high. It is often called a silent killer because it usually has no symptoms but significantly raises the risk of heart attack, stroke, heart failure, and kidney disease. Blood pressure is measured as systolic over diastolic pressure, and readings consistently at or above 130/80 mmHg are generally considered elevated. Contributing factors include high salt intake, obesity, lack of exercise, excessive alcohol, stress, and genetics. Treatment includes lifestyle modifications and medications such as ACE inhibitors, calcium channel blockers, and diuretics."
+    "content": "Hypertension, or high blood pressure, is a condition in which the force of blood against artery walls is consistently too high. It is often called a silent killer because it usually has no symptoms but significantly raises the risk of stroke, heart attack, heart failure, and kidney disease. It is the single most important modifiable risk factor for both ischemic and hemorrhagic stroke, and it drives the small vessel disease that causes lacunar strokes. Blood pressure readings consistently at or above 130/80 mmHg are generally considered elevated. Contributing factors include high salt intake, obesity, lack of exercise, excessive alcohol, and genetics. Treatment includes lifestyle changes and medications such as ACE inhibitors, calcium channel blockers, and diuretics."
+  },
+  {
+    "topic": "Type 2 Diabetes",
+    "category": "Endocrinology",
+    "content": "Type 2 diabetes is a chronic condition in which the body becomes resistant to insulin or does not produce enough insulin, leading to elevated blood sugar levels. Over time, high blood sugar damages blood vessels both large and small, which is why diabetes is a major risk factor for stroke, heart disease, kidney disease, and vision loss. In the brain, it accelerates the small vessel disease that contributes to lacunar strokes and vascular cognitive decline. Many people have no symptoms early on, while others experience increased thirst, frequent urination, fatigue, and slow-healing wounds. Management focuses on lifestyle changes such as a balanced diet and regular exercise, along with medications like metformin and, when needed, insulin therapy."
+  },
+  {
+    "topic": "Stroke Rehabilitation",
+    "category": "Stroke Neurology",
+    "content": "Stroke rehabilitation is the process of helping a person regain function and independence after a stroke. Because the brain has a capacity to reorganize itself, called neuroplasticity, targeted therapy can help patients relearn skills affected by the injury. A rehabilitation team typically includes physical therapists who work on strength and mobility, occupational therapists who focus on daily activities, and speech-language therapists who address communication and swallowing problems. Rehabilitation generally works best when started early and continued consistently, with goals tailored to each person's deficits. Recovery varies widely depending on the stroke's size and location, the person's overall health, and the intensity of therapy. Ongoing management of risk factors is essential to prevent another stroke."
   },
   {
     "topic": "Alzheimer Disease",
     "category": "Neurology",
-    "content": "Alzheimer disease is a progressive neurodegenerative disorder and the most common cause of dementia. It is characterized by the accumulation of amyloid-beta plaques and tau protein tangles in the brain, leading to the death of neurons and shrinkage of brain tissue. Early symptoms include difficulty remembering recent events, while later stages involve confusion, mood changes, difficulty with language, and eventually loss of the ability to carry out daily activities. Age is the greatest risk factor, along with genetics and cardiovascular risk factors. While there is no cure, some medications can temporarily improve symptoms, and research into disease-modifying therapies targeting amyloid is ongoing."
-  },
-  {
-    "topic": "Pneumonia",
-    "category": "Pulmonology",
-    "content": "Pneumonia is an infection that inflames the air sacs in one or both lungs, which may fill with fluid or pus. It can be caused by bacteria, viruses, or fungi. Symptoms include cough with phlegm, fever, chills, and difficulty breathing. The severity ranges from mild to life-threatening, and it is most dangerous for infants, older adults, and people with weakened immune systems or chronic diseases. Bacterial pneumonia is commonly treated with antibiotics, while viral pneumonia is managed supportively. Vaccines against common causes such as pneumococcus and influenza can help prevent some types of pneumonia."
-  },
-  {
-    "topic": "Asthma",
-    "category": "Pulmonology",
-    "content": "Asthma is a chronic respiratory condition in which the airways become inflamed and narrowed, making breathing difficult. During an asthma attack, the muscles around the airways tighten, the lining swells, and excess mucus is produced. Common triggers include allergens, exercise, cold air, respiratory infections, and air pollution. Symptoms include wheezing, shortness of breath, chest tightness, and coughing, often worse at night or early morning. Asthma is managed with two types of medication: long-term control medications such as inhaled corticosteroids that reduce inflammation, and quick-relief inhalers such as bronchodilators that open the airways during an attack."
-  },
-  {
-    "topic": "Chronic Kidney Disease",
-    "category": "Nephrology",
-    "content": "Chronic kidney disease is the gradual loss of kidney function over time. The kidneys filter waste and excess fluid from the blood, and when they are damaged, harmful levels of waste can build up in the body. The most common causes are diabetes and high blood pressure. Early stages often have no symptoms, but as the disease progresses, people may experience fatigue, swelling in the legs, changes in urination, and difficulty concentrating. The disease is staged based on the glomerular filtration rate (GFR). Management focuses on treating the underlying cause, controlling blood pressure and blood sugar, and in advanced stages may require dialysis or kidney transplant."
+    "content": "Alzheimer disease is a progressive neurodegenerative disorder and the most common cause of dementia. It is characterized by the accumulation of amyloid-beta plaques and tau protein tangles in the brain, leading to the death of neurons and shrinkage of brain tissue. Early symptoms include difficulty remembering recent events, while later stages involve confusion, mood changes, difficulty with language, and eventually loss of the ability to carry out daily activities. Age is the greatest risk factor, along with genetics and cardiovascular risk factors such as hypertension and diabetes, which also raise stroke risk. While there is no cure, some medications can temporarily improve symptoms, and newer therapies targeting amyloid are being studied."
   }
 ]

@@ -107,10 +107,11 @@ def build_ui():
                 gr.Examples(
                     examples=[
                         ["What is an ischemic stroke?"],
-                        ["Explain the difference between a stroke and a TIA"],
-                        ["What causes a heart attack?"],
-                        ["How does type 2 diabetes affect the body?"],
-                        ["What is Alzheimer disease?"],
+                        ["What is the difference between a stroke and a TIA?"],
+                        ["What is malignant cerebral edema after a large stroke?"],
+                        ["How does mechanical thrombectomy treat a stroke?"],
+                        ["What is a lacunar stroke?"],
+                        ["Why does atrial fibrillation increase stroke risk?"],
                     ],
                     inputs=question,
                 )

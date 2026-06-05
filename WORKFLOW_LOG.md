@@ -1,91 +1,90 @@
-# 🤖 Agent Collaboration Workflow Log — MedVisor
+# Agent Collaboration Workflow Log  
 
-This document records the agent-assisted development process for the MedVisor capstone project, following the four-phase Agent Workflow required by the assignment.
 
----
 
-## Phase 1 — Ideation & Planning
-
-**Goal:** Decide on a project that combines an LLM and a Diffusion model in a coherent medical-education application.
-
-**Key prompt given to the agent:**
-> "I'm building a capstone for a deep generative models course. It must combine an LLM (RAG or API) with a diffusion model, be medical-themed, and run on Google Colab. Propose a concrete project with a clear architecture and a feature list."
-
-**Agent output (summarized):**
-- Proposed **MedVisor**, a medical education assistant.
-- Core loop: user question → LLM+RAG explanation → diffusion-generated illustration → optional quiz.
-- Rationale: RAG keeps the LLM grounded (reduces hallucination), the diffusion model adds visual learning value, and both can run on Colab (LLM via API, diffusion via GPU).
-
-**Decision:** Adopted the proposal. Chose to keep the LLM behind an OpenAI-compatible API so the same code works with OpenRouter, Big Pickle, or local Ollama.
+setup
+- Coding agent: claude, opus 4.8
+- LLM inference backend: OpenRouter, OpenAI-compatible API, free model `meta-llama/llama-3.3-70b-instruct:free`
+- Image backend: Stable Diffusion via diffusers
+- Google Colab (T4)
 
 ---
 
-## Phase 2 — Architecture Design & Task Decomposition
+## Phase 1  Ideation & Planning
 
-**Key prompt:**
-> "Break MedVisor into modules with clear responsibilities. Define the data flow between the RAG module, the image generator, and the UI. Specify the API contract between modules."
+I started by telling the agent my constraints and background:
 
-**Resulting task breakdown:**
+> "我想要做有關於神經內科的衛教內容，特別是有關於腦中風方面。 I need a capstone that combines an LLM with a diffusion model, is medical-themed, and runs on a Colab T4. Suggest something that fits my field but is safe to demo publicly."
 
-| Task | Module | Output contract |
-|------|--------|-----------------|
-| Retrieval + LLM generation | `modules/llm_rag.py` | `{explanation, sources, image_prompt, primary_topic}` |
-| Image synthesis | `modules/image_gen.py` | `PIL.Image` from a text prompt |
+The agent gave me a few options. I ruled out a radiology-report generator (would need real patient scans data and safety problems) and a plain stroke-risk calculator (the image model would feel tacked on). We settled on MedVisor, a medical *education* assistant: you ask a question, an LLM explains it using a curated knowledge base (RAG), and a diffusion model draws an illustration.
+
+The one design rule I insisted on: the two models should actually work *together*. So I asked the agent to have the LLM write the image prompt that the diffusion model then renders — a real LLM → Diffusion hand-off rather than two separate features.
+
+---
+
+## Phase 2 Architecture Design & Task Decomposition
+
+My prompt:
+> "Break this into clean modules. What does each one return, and how does data flow from the question to the final image?"
+
+We agreed on this structure:
+
+| Part | File | What it returns |
+|------|------|-----------------|
+| Retrieval + LLM answer + image-prompt writing | `modules/llm_rag.py` | `{explanation, sources, image_prompt, primary_topic}` |
+| Image generation | `modules/image_gen.py` | a `PIL.Image` |
 | Knowledge base | `knowledge_base/medical_facts.json` | list of `{topic, category, content}` |
-| UI + orchestration | `app.py` | Gradio Blocks |
+| UI / orchestration | `app.py` | Gradio app |
 
-**Design decisions made with the agent:**
-- The LLM also writes the **image prompt** (LLM → diffusion handoff), so the two models are genuinely chained rather than independent.
-- Embeddings normalized so cosine similarity reduces to a dot product (cheap retrieval, no FAISS dependency needed for a small KB).
-- Image style fixed via prompt suffix for visual consistency.
-
----
-
-## Phase 3 — Code Generation & Implementation
-
-**Tools used:** IDE-based agent + CLI for environment setup.
-
-### Key prompts
-1. **RAG module:**
-   > "Write a `MedicalRAG` class: load a JSON KB, embed docs with sentence-transformers, retrieve top-k by cosine similarity, then call an OpenAI-compatible chat endpoint with the retrieved context. Include a method that also asks the LLM to produce a short image prompt."
-
-2. **Image module:**
-   > "Write a `MedicalImageGenerator` using diffusers. Default to SDXL-Turbo (1-4 steps, guidance 0) for speed on a T4; provide an SD 1.5 fallback. Enforce an educational illustration style and a safety negative prompt."
-
-3. **App:**
-   > "Wire both modules into a Gradio Blocks UI with a question box, checkboxes for image/quiz, an examples panel, and outputs for explanation, image, image-prompt, and quiz."
-
-### Technical bottlenecks resolved with the agent
-
-| Bottleneck | Symptom | Resolution (agent-assisted) |
-|------------|---------|------------------------------|
-| SDXL VAE produced NaN images in FP16 | Black/garbage output | Use SDXL-Turbo (more FP16-stable) and `enable_attention_slicing()` for T4 memory |
-| LLM hallucinating beyond the KB | Made-up facts | Strengthened the system prompt to *use only the provided context* + "say so if not covered" |
-| Long image-generation latency | UI felt slow | Switched from 25-step SD 1.5 to 4-step SDXL-Turbo (≈6× faster) |
-| Provider lock-in | Hard to switch LLMs | Abstracted to an OpenAI-compatible client configurable by env vars |
-| Colab missing API key | Crash on startup | Added a graceful fallback that returns the retrieved context if the LLM call fails |
+Decisions I made as the "architect":
+- Keep the LLM behind an OpenAI-compatible client so I can switch between OpenRouter, Big Pickle, or local Ollama by only changing environment variables.
+- For a small knowledge base, skip a heavy vector DB  just use normalized sentence-embeddings + cosine similarity.
+- Build the knowledge base around my own field: ischemic/hemorrhagic stroke, TIA, lacunar stroke, large hemispheric infarction, malignant cerebral edema, tPA, thrombectomy, NIHSS, stroke imaging — the same topics as my END/MCE prediction research.
 
 ---
 
-## Phase 4 — Interface Encapsulation & Finalization
+## Phase 3 Code Generation & Implementation
 
-**Key prompt:**
-> "Generate a Gradio UI with a soft theme, example questions, and a visible medical disclaimer. Then draft the README and a one-click Colab notebook."
+### Key prompts I used
+- "Write a `MedicalRAG` class: load the JSON KB, embed with sentence-transformers, retrieve top-k by cosine similarity, then call an OpenAI-compatible chat endpoint with the retrieved context. Also have it generate a short image prompt and a quiz question."
+- "Write a `MedicalImageGenerator` with diffusers."
+- "Wire both into a Gradio UI with example stroke questions and a disclaimer."
 
-**Outputs produced:**
-- `app.py` with a two-column Gradio layout (input/controls on the left, image on the right; explanation and quiz below).
-- `MedVisor_Colab.ipynb` — installs dependencies, sets the API key from Colab secrets, and launches with a public share link.
-- `README.md` — architecture diagram, setup, and run instructions.
-- This `WORKFLOW_LOG.md`.
+### Technical problems the agent helped me solve
 
-**Final verification:**
-- Ran the full pipeline end-to-end with several questions (stroke, TIA, heart attack, diabetes).
-- Confirmed the explanation stays grounded in retrieved sources, the image reflects the topic, and the quiz is answerable from the explanation.
+These are real issues I hit while building this and the related diffusion homeworks that fed into it:
+
+**1. `salesforce-lavis` wouldn't install (BLIP captioning).**
+While experimenting with image captioning, `lavis` forced old versions of `transformers` and `huggingface-hub` that conflicted with `diffusers`. After fighting the dependency resolver, the agent pointed out I didn't need `lavis` at all — `transformers` has BLIP built in (`BlipForConditionalGeneration`), same underlying model, zero conflicts. Switched and it just worked.
+
+**2. SDXL VAE produced NaN images in FP16.**
+My first diffusion attempts on Colab gave pure-noise / black images. I asked the agent "why are the images garbage / NaN?" and we added a debug check that showed the VAE output was `NaN` at the very first step. This is a known SDXL FP16 bug. Fix: use the community `madebyollin/sdxl-vae-fp16-fix` VAE (or run the VAE in FP32). For MedVisor I avoided the problem entirely by using SDXL-Turbo first, then full SDXL with the fixed VAE.
+
+**3. Image quality was poor (blurry, off-topic).**
+The first version used SDXL-Turbo (4 steps, `guidance_scale=0`) — fast but low quality, and it ignores negative prompts. I told the agent "the images aren't clear or ideal, how do I improve this?" Two fixes:
+   - **Image side:** switched the default to full **SDXL** (30 steps, 1024px, guidance 7.5) with `enable_vae_tiling()` so it fits the T4, plus a richer style prompt and a proper negative prompt.
+   - **LLM side:** rewrote the image-prompt generation so the LLM describes a *concrete anatomical scene* (specific structures, viewpoint, colors) instead of an abstract phrase, with a few-shot example and an explicit "no text in the image" rule.
+   Together these made the illustrations much sharper and more on-topic.
+
+**4. Keeping the LLM grounded.**
+Early on the LLM added plausible but unsourced medical claims. I strengthened the system prompt to *use only the retrieved context* and to say so when the context doesn't cover the question — important for a medical tool.
+
+**5. Graceful failure when the API key is missing.**
+The app crashed if `LLM_API_KEY` wasn't set. Added a fallback that returns the retrieved knowledge-base text instead of crashing, so the demo never hard-fails.
 
 ---
 
-## Reflections
+## Phase 4 Interface Encapsulation & Finalization
 
-- **What worked:** Letting the LLM produce the diffusion prompt made the two generative models cooperate naturally instead of feeling bolted together.
-- **What was tricky:** FP16 stability of SDXL on a T4 — SDXL-Turbo solved both speed and stability at once.
-- **If extended:** add a larger vector DB (FAISS/Chroma), allow PDF upload to expand the KB, and add ControlNet so users can sketch the anatomy they want illustrated.
+Prompt:
+> "Make a Gradio UI with a soft theme, stroke example questions, checkboxes for image/quiz, and a visible disclaimer. Then write the README and a one-click Colab notebook."
+
+Outputs:
+- `app.py` — two-column Gradio layout, example stroke questions, educational disclaimer.
+- `MedVisor_Colab.ipynb` — installs everything, sets the API key, launches with a public share link.
+- `README.md` — architecture diagram + run instructions.
+- This log.
+
+I verified the whole pipeline on stroke questions ("What is an ischemic stroke?", "stroke vs TIA", "malignant cerebral edema") and confirmed the explanation stays grounded, the image matches the topic, and the quiz is answerable from the text.
+
+
